@@ -18,7 +18,7 @@
 | 🤝 **Вера Ассистент** | ![Big Data](https://img.shields.io/badge/Big%20Data-9933ff?style=for-the-badge&logo=apache-spark&logoColor=white) | — |
 | 🧬 **Даша тю-тю-тю** | ![Генетика](https://img.shields.io/badge/Genetics-ff3399?style=for-the-badge&logo=dna&logoColor=white) | — |
 | 🥅 **Артём не хокей** | ![Big Data](https://img.shields.io/badge/Big%20Data-9933ff?style=for-the-badge&logo=apache-spark&logoColor=white) | — |
-| 💰 **Богдан спонсор** | ![Big Data](https://img.shields.io/badge/Big%20Data-9933ff?style=for-the-badge&logo=apache-spark&logoColor=white) | — |
+| 💰 **Богдан спонсор** | ![Big Data](https://img.shields.io/badge/Big%20Data-9933ff?style=for-the-badge&logo=apache-spark&logoColor=white) | [ChitaBogis](https://github.com/ChitaBogis) |
 | ❤️ **Женина❤️Вика** | ![Генетика](https://img.shields.io/badge/Genetics-ff3399?style=for-the-badge&logo=dna&logoColor=white) | — |
 
 ---
