@@ -1,0 +1,202 @@
+/* Общий контейнер */
+.loginContainer {
+    width: 100%;
+    max-width: 420px;
+    padding: 48px 40px;
+    border-radius: 28px;
+    backdrop-filter: blur(25px);
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.12); /* легкий стеклянный эффект */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25);
+}
+
+.tabContainer {
+    display: flex;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    padding: 6px;
+    margin-bottom: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tab {
+    flex: 1;
+    padding: 14px 24px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+}
+
+.tab.active {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+    color: white;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.formTitle {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 36px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 28px;
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.submitBtn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.25));
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.submitBtn:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.divider {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    margin: 32px 0;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 38%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+
+.socialButtons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+
+.socialBtn {
+    flex: 1;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.socialBtn:hover {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.socialBtn svg {
+    width: 16px; /* reduced icon size from 20px to 16px */
+    height: 16px;
+    margin-right: 10px;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.terms {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.terms a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+
+@media (max-width: 480px) {
+    .loginContainer {
+        margin: 20px;
+        padding: 36px 28px;
+        border-radius: 24px;
+    }
+
+    .formTitle {
+        font-size: 28px;
+        margin-bottom: 32px;
+    }
+
+    .submitBtn {
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

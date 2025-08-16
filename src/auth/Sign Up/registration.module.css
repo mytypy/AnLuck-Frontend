@@ -1,0 +1,26 @@
+.signupFields {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.signupFields.fadeOut{
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.formRow {
+    display: flex;
+    gap: 16px;
+}
+
+.formRow .formGroup {
+    flex: 1;
+}
+
+@media (max-width: 480px) {
+
+    .formRow {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+}
