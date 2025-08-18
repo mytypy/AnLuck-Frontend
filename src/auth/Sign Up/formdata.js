@@ -4,7 +4,7 @@ export const dataROW = [
         id: 'first_name',
         type: 'text',
         placeholder: 'Имя',
-        required: true
+        required: false
     },
 
     {
@@ -23,20 +23,20 @@ export const data = [
         id: 'email',
         type: 'email',
         placeholder: 'Введите ваш email',
-        required: true
+        required: false
     },
     {
         key: 4,
         id: 'password',
         type: 'password',
         placeholder: 'Придумайте пароль',
-        required: true
+        required: false
     },
     {
         key: 5,
         id: 'password_retry',
         type: 'password',
         placeholder: 'Повторите пароль',
-        required: true
+        required: false
     },
 ]

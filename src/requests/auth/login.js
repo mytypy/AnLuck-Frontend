@@ -7,6 +7,6 @@ export default async function login(data) {
         
         return true
     } catch (error) {
-        return await error.response.data
+        return error.response?.data
     }
 }
