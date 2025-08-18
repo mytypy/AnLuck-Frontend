@@ -1,33 +1,47 @@
 import registrationcss from './registration.module.css'
 import basecss from '../base.module.css'
+import { dataROW, data } from './formdata'
 
 
-export default function SignUp() {
+export default function SignUp({ form, onChange }) {
     return (
         <div className={registrationcss.signupFields}>
             <div className={registrationcss.formRow}>
+                {
+                    dataROW.map((dict) => {
+                        return (
+                            <div key={dict['key']}
+                            className={basecss.formGroup}>
+                                <input id={dict['id']}
+                                key={dict['id']}
+                                onChange={onChange}
+                                 type={dict['type']}
+                                  className={basecss.formInput}
+                                   placeholder={dict['placeholder']}
+                                    required={'required' ? dict['required']  : ''}
+                                     value={form[dict['id']]}/>
+                            </div>
+                        )
+                    })
+                }
 
-                <div className={basecss.formGroup}>
-                        <input type="text" className={basecss.formInput} placeholder="Имя" required />
-                    </div>
-
-                    <div className={basecss.formGroup}>
-                        <input type="text" className={basecss.formInput} placeholder="Фамилия" required />
-                    </div>
-
-                </div>
-
-                <div className={basecss.formGroup}>
-                    <input type="email" className={basecss.formInput} placeholder="Введите ваш email" required />
-                </div>
-
-                <div className={basecss.formGroup}>
-                    <input type="password" className={basecss.formInput} placeholder="Придумайте пароль" required />
-                </div>
-
-                <div className={basecss.formGroup}>
-                    <input type="password" className={basecss.formInput} placeholder="Повторите пароль" required />
-                </div>
             </div>
+                {
+                    data.map((dict) => {
+                        return (
+                            <div key={dict['key']}className={basecss.formGroup}>
+                                <input id={dict['id']}
+                                onChange={onChange}
+                                key={dict['id']}
+                                 type={dict['type']}
+                                  className={basecss.formInput}
+                                   placeholder={dict['placeholder']}
+                                    required={'required' ? dict['required']  : ''}
+                                     value={form[dict['id']]}/>
+                            </div>
+                        )
+                    })
+                }
+        </div>
     )
 }

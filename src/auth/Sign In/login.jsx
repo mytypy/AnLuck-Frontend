@@ -1,17 +1,26 @@
 import logincss from './login.module.css'
 import basecss from '../base.module.css'
+import { data } from './formdata'
 
 
-export default function SignIn() {
+export default function SignIn({ form, onChange }) {
     return (
         <div className={logincss.signinFields}>
-            <div class={basecss.formGroup}>
-                <input type="email" className={basecss.formInput} placeholder="Введите ваш email" required />
-            </div>
-
-            <div class={basecss.formGroup}>
-                <input type="password" className={basecss.formInput} placeholder="Введите ваш пароль" required />
-            </div>
+            {
+                data.map((dict) => {
+                    return (
+                        <div key={dict['key']} className={basecss.formGroup}>
+                            <input id={dict['id']}
+                             type={dict['type']}
+                              className={basecss.formInput}
+                               placeholder={dict['placeholder']}
+                                value={form[dict['id']]}
+                                onChange={onChange}
+                                required />
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
