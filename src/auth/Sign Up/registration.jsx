@@ -1,5 +1,5 @@
-import registrationcss from './registration.module.css'
-import basecss from '../base.module.css'
+import registrationcss from '../../styles/registration.module.css'
+import basecss from '../../styles/base.module.css'
 import { dataROW, data } from './formdata'
 
 

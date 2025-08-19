@@ -1,5 +1,5 @@
-import logincss from './login.module.css'
-import basecss from '../base.module.css'
+import logincss from '../../styles/login.module.css'
+import basecss from '../../styles/base.module.css'
 import { data } from './formdata'
 
 
@@ -16,7 +16,7 @@ export default function SignIn({ form, onChange }) {
                                placeholder={dict['placeholder']}
                                 value={form[dict['id']]}
                                 onChange={onChange}
-                                required />
+                                />
                         </div>
                     )
                 })
