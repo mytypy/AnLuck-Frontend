@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export default async function login(data) {
+export default async function loginUser(data) {
     try {
         const response = await axios.post('http://127.0.0.1:8000/api/auth/login/', data, {withCredentials: true})
         

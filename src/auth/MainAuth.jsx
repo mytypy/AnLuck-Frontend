@@ -1,181 +1,61 @@
-"use client"
-
-import { useState } from "react"
 import GoogleIcon from "../components/SVG/GoogleIcon"
 import GitHubIcon from "../components/SVG/GitHubIcon"
 import SignUp from "./Sign Up/registration"
 import SignIn from './Sign In/login'
 import ErrorMessage from "../components/errors/ErrorMessage"
 import main from "../styles/mainauth.module.css"
-import login from "../requests/auth/login"
-import registration from "../requests/auth/registration"
 
+import { useAuth } from "../providers/AuthProvider"
+import { useNavigate } from "react-router-dom"
+
+
+const VARIANTS = {
+  "Sign In": { label: "Вход", title: "Добро пожаловать обратно" },
+  "Sign Up": { label: "Регистрация", title: "Создайте аккаунт" },
+}
 
 export default function Auth() {
-  const [variant, setVariant] = useState("Sign In")
-  const [formSignIn, setFormSignIn] = useState({ email: "", password: "" })
-  const [formSignUp, setFormSignUp] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: "",
-    password_retry: "",
-  })
+  const navigate = useNavigate()
+  const { variant,
+    setVariant,
+    forms,
+    messages,
+    setMessages,
+    isLoading,
+    onChange,
+    onSubmit
+    } = useAuth()
 
-  const [messages, setMessages] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-
-  function parseErrors(errors) {
-  return Object.entries(errors).flatMap(([field, messages]) =>
-    messages.map(msg => ({ text: `${field}: ${msg}`, type: "error" }))
-  );
-  }
-
-  function formChange(event) {
-    if (messages.length > 0) {
-      setMessages([])
+  const handleSubmit = async (e) => {
+    const result = await onSubmit(e);
+    if (result) {
+      navigate('/profile');
     }
-
-    if (variant === "Sign In") {
-      setFormSignIn((preventData) => ({
-        ...preventData,
-        [event.target.id]: event.target.value,
-      }))
-    } else {
-      setFormSignUp((preventData) => ({
-        ...preventData,
-        [event.target.id]: event.target.value,
-      }))
-    }
-  }
-
-  function validateForm() {
-    const errors = []
-
-    if (variant === "Sign In") {
-      if (!formSignIn.email) {
-        errors.push({ text: "Email обязателен для заполнения", type: "error" })
-      } else if (!formSignIn.email.includes("@")) {
-        errors.push({ text: "Введите корректный email адрес", type: "error" })
-      }
-
-      if (!formSignIn.password) {
-        errors.push({ text: "Пароль обязателен для заполнения", type: "error" })
-      }
-    } else {
-      if (!formSignUp.first_name) {
-        errors.push({ text: "Имя обязательно для заполнения", type: "error" })
-      }
-
-
-      if (!formSignUp.email) {
-        errors.push({ text: "Email обязателен для заполнения", type: "error" })
-      } else if (!formSignUp.email.includes("@")) {
-        errors.push({ text: "Введите корректный email адрес", type: "error" })
-      }
-
-      if (!formSignUp.password) {
-        errors.push({ text: "Пароль обязателен для заполнения", type: "error" })
-      } else if (formSignUp.password.length < 8) {
-        errors.push({ text: "Пароль должен содержать минимум 8 символов", type: "error" })
-      }
-
-      if (!formSignUp.password_retry) {
-        errors.push({ text: "Подтверждение пароля обязательно", type: "error" })
-      } else if (formSignUp.password !== formSignUp.password_retry) {
-        errors.push({ text: "Пароли не совпадают", type: "error" })
-      }
-    }
-
-    if (errors.length > 0) {
-      setMessages(errors)
-      return false
-    }
-
-    return true
-  }
-
-  async function submitForm(e) {
-    e.preventDefault()
-
-    if (!validateForm()) return
-
-    setIsLoading(true)
-    setMessages([])
-
-    try {
-      const choicer = {
-        "Sign In": {
-          function: login,
-          data: formSignIn,
-        },
-        "Sign Up": {
-          function: registration,
-          data: formSignUp,
-        },
-      }
-      const choicenFunction = choicer[variant]["function"]
-      const choicenData = choicer[variant]["data"]
-
-      const result = await choicenFunction(choicenData)
-
-      if (result == true) {
-        setMessages([
-          {
-            text: variant === "Sign In" ? "Успешный вход в систему!" : "Аккаунт успешно создан!",
-            type: "success",
-          },
-        ])
-      } else {
-        throw result
-      }
-    } catch (error) {
-        if (variant == 'Sign Up') {
-          const messages = parseErrors(error);
-          setMessages(messages);
-        }
-        else {
-
-          setMessages([{text: error.detail, type: 'error'}])
-        }
-
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
-  function handleTabSwitch(newVariant) {
-    setVariant(newVariant)
-    setMessages([])
-  }
-
+};
   return (
     <div className={main.loginContainer}>
       <div className={main.tabContainer}>
-        <button
-          className={`${main.tab} ${variant === "Sign Up" ? main.active : ""}`}
-          onClick={() => handleTabSwitch("Sign Up")}
-        >
-          Регистрация
-        </button>
-        <button
-          className={`${main.tab} ${variant === "Sign In" ? main.active : ""}`}
-          onClick={() => handleTabSwitch("Sign In")}
-        >
-          Вход
-        </button>
+        {Object.keys(VARIANTS).map(key => (
+          <button
+            key={key}
+            className={`${main.tab} ${variant === key ? main.active : ""}`}
+            onClick={() => { setVariant(key); setMessages([]) }}
+            type="button"
+          >
+            {VARIANTS[key].label}
+          </button>
+        ))}
       </div>
 
-      <h1 className={main.formTitle}>{variant === "Sign In" ? "Добро пожаловать обратно" : "Создайте аккаунт"}</h1>
+      <h1 className={main.formTitle}>{VARIANTS[variant].title}</h1>
 
       <ErrorMessage messages={messages} onClose={() => setMessages([])} />
 
-      <form onSubmit={submitForm}>
-        {variant === "Sign In" ? (
-          <SignIn form={formSignIn} onChange={formChange} />
-        ) : (
-          <SignUp form={formSignUp} onChange={formChange} />
-        )}
+      <form onSubmit={handleSubmit}>
+        {variant === "Sign In"
+          ? <SignIn form={forms["Sign In"]} onChange={onChange} />
+          : <SignUp form={forms["Sign Up"]} onChange={onChange} />
+        }
 
         <button type="submit" className={main.submitBtn} disabled={isLoading}>
           {isLoading ? "Загрузка..." : variant === "Sign Up" ? "Создать аккаунт" : "Войти"}
@@ -185,14 +65,8 @@ export default function Auth() {
       <div className={main.divider}>OR LOGIN WITH</div>
 
       <div className={main.socialButtons}>
-        <button className={`${main.socialBtn} google-btn`}>
-          <GoogleIcon />
-          Google
-        </button>
-        <button className={`${main.socialBtn} github-btn`}>
-          <GitHubIcon />
-          GitHub
-        </button>
+        <button className={`${main.socialBtn} google-btn`} type="button"><GoogleIcon /> Google</button>
+        <button className={`${main.socialBtn} github-btn`} type="button"><GitHubIcon /> GitHub</button>
       </div>
 
       <p className={main.terms}>
