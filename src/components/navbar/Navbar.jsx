@@ -1,6 +1,5 @@
 import styles from "../../styles/baseuser.module.css"
 
-
 export default function NavBar({ avatar }) {
   return (
     <nav className={styles.navbar}>
@@ -23,7 +22,11 @@ export default function NavBar({ avatar }) {
           </li>
         </ul>
         <div className={styles.navProfile}>
-          <img src={avatar || "/placeholder.svg"} alt="Profile" className={styles.navAvatar} />
+          <img
+            src={avatar || "/placeholder.svg?height=40&width=40&query=user avatar"}
+            alt="Profile"
+            className={styles.navAvatar}
+          />
         </div>
       </div>
     </nav>

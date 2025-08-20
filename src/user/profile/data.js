@@ -1,7 +1,7 @@
 export const postsUser = [
     {
       id: 1,
-      author: "Никита Тик Ток",
+      author: "Никита Григорьев",
       text: "Just finished an amazing photoshoot in the mountains! The golden hour lighting was absolutely perfect. Can't wait to share the results with you all! 📸✨",
       time: "2 hours ago",
       avatar: "https://avatars.githubusercontent.com/u/143941740?v=4",
@@ -38,7 +38,7 @@ export const postsUser = [
     },
     {
       id: 2,
-      author: "Никита Тик Ток",
+      author: "Никита Григорьев",
       text: "Coffee and creativity go hand in hand. Starting my day with a fresh cup and some new ideas brewing! ☕️",
       time: "1 day ago",
       avatar: "https://avatars.githubusercontent.com/u/143941740?v=4",
@@ -55,92 +55,35 @@ export const postsUser = [
           replies: [],
         },
       ],
-    },
-    {
-      id: 3,
-      author: "Никита Тик Ток",
-      text: "Grateful for all the support on my latest project. Your comments and shares mean the world to me! 🙏",
-      time: "3 days ago",
-      avatar: "https://avatars.githubusercontent.com/u/143941740?v=4",
-      likes: 156,
-      comments: 23,
-      shares: 12,
-      commentsList: [
-        {
-          id: 1,
-          author: "Дмитрий",
-          text: "Заслуженный успех! 👏",
-          time: "2 days ago",
-          avatar: "/diverse-female-avatar.png",
-          replies: [],
-        },
-        {
-          id: 2,
-          author: "София",
-          text: "Продолжай в том же духе!",
-          time: "1 day ago",
-          avatar: "/diverse-female-avatar.png",
-          replies: [],
-        },
-      ],
-    },
-    {
-      id: 4,
-      author: "Никита Тик Ток",
-      text: "Working on some exciting new features for the app. Can't wait to share what we've been building behind the scenes! 🚀",
-      time: "5 days ago",
-      avatar: "https://avatars.githubusercontent.com/u/143941740?v=4",
-      likes: 89,
-      comments: 15,
-      shares: 7,
-      commentsList: [
-        {
-          id: 1,
-          author: "Алексей",
-          text: "Интригующе! Жду обновления",
-          time: "4 days ago",
-          avatar: "/diverse-female-avatar.png",
-          replies: [],
-        },
-      ],
-    },
-    {
-      id: 5,
-      author: "Никита Тик Ток",
-      text: "Beautiful sunset from my balcony today. Sometimes you need to pause and appreciate the simple moments in life. 🌅",
-      time: "1 week ago",
-      avatar: "https://avatars.githubusercontent.com/u/143941740?v=4",
-      likes: 203,
-      comments: 31,
-      shares: 18,
-      commentsList: [
-        {
-          id: 1,
-          author: "Мария",
-          text: "Какая красота! 🌅",
-          time: "6 days ago",
-          avatar: "/diverse-female-avatar.png",
-          replies: [],
-        },
-        {
-          id: 2,
-          author: "Игорь",
-          text: "Согласен, важно ценить моменты",
-          time: "5 days ago",
-          avatar: "/diverse-female-avatar.png",
-          replies: [],
-        },
-      ],
-    },
+    }
   ]
 
 export const userFriends = [
-    { id: 1, name: "Bulat", avatar: "/diverse-female-avatar.png" },
-    { id: 2, name: "Нина", avatar: "/diverse-female-avatar.png" },
-    { id: 3, name: "Кафоленка", avatar: "/diverse-female-avatar.png" },
-    { id: 4, name: "Валентина", avatar: "/diverse-female-avatar.png" },
-    { id: 5, name: "Илья", avatar: "/diverse-female-avatar.png" },
-    { id: 6, name: "Катерина", avatar: "/diverse-female-avatar.png" },
-    { id: 7, name: "Даниил", avatar: "/diverse-female-avatar.png" },
-    { id: 8, name: "Дмитрий", avatar: "/diverse-female-avatar.png" },
+    { id: 1, name: "Вика", avatar: "/Vika.jpeg" },
+    { id: 2, name: "Артём", avatar: "/Артемка.jpeg" },
+    { id: 3, name: "Женя", avatar: "/Женя.jpeg" },
+    { id: 4, name: "Даша", avatar: "/Даша.jpeg" }
   ]
+
+export const userData = {
+    name: "Никита Тик Ток",
+    tag: "@kavinski",
+    bio: "Backend developer and tech enthusiast passionate about building scalable applications. Love coding in Python, exploring new technologies, and bringing ideas to life through clean and efficient code.",
+    location: "San Francisco, CA",
+    website: "kavinski.dev",
+    avatar: "https://avatars.githubusercontent.com/u/143941740?v=4",
+    joinDate: "March 2023",
+    work: "Tech Corp • 3 years",
+    stats: {
+      Posts: 993,
+      Followers: 12314,
+      Following: 1212122
+    }
+}
+
+export const dataSmiles = [
+  {type: 'location', smile: '📍'},
+  {type: 'website', smile: '🌐'},
+  {type: 'joinDate', smile: '📅'},
+  {type: 'work', smile: '💼'}
+]

@@ -332,49 +332,15 @@ body {
 }
 
 /* Updated post actions to match reference design with icons and counts */
+
 .postActions {
   display: flex;
   gap: 2rem;
   padding: 1rem 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 1rem;
-}
 
-.postActionBtn {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 0.375rem;
-  transition: all 0.3s ease;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
-
-.postActionBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-/* Added red styling for liked posts */
-.postActionBtn.liked {
-  color: #ef4444;
-}
-
-.postActionBtn.liked:hover {
-  color: #dc2626;
-  background: rgba(239, 68, 68, 0.1);
-}
-
-.actionIcon {
-  width: 20px;
-  height: 20px;
-  stroke-width: 1.5;
-}
-
 /* Sidebar Styling */
 .sidebar {
   display: flex;
@@ -682,6 +648,11 @@ body {
   gap: 0.5rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
+}
+
+.infoItem a {
+  text-decoration: none;
+  color: white;
 }
 
 .infoIcon {

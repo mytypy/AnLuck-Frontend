@@ -3,6 +3,7 @@ import AuthContextProvider from "./providers/AuthProvider"
 import Auth from "./auth/MainAuth"
 import Profile from "./user/profile/profile"
 import IsAuth from "./components/isAuth/isAuth"
+import ProfileProvaider from "./providers/ProfileProvaider"
 
 
 export default function App() {
@@ -14,7 +15,9 @@ export default function App() {
             }/>
             <Route path="/profile" element={
                 <IsAuth>
-                    <Profile/>
+                    <ProfileProvaider> 
+                        <Profile/>
+                    </ProfileProvaider>
                 </IsAuth>
                 }/>
         </Routes>
