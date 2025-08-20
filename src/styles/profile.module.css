@@ -1,70 +1,1045 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
-    background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
-    background-size: 400% 400%;
-    animation: shimmer 15s ease infinite;
-    min-height: 100vh;
-    color: var(--foreground);
+  font-family: "DM Sans", sans-serif;
+  background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+  background-size: 400% 400%;
+  animation: shimmer 15s ease infinite;
+  min-height: 100vh;
+  color: var(--foreground);
 }
 
 @keyframes shimmer {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-
 /* Main Content */
-.mainContent { margin-top: 100px; padding: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
+.mainContent {
+  margin-top: 100px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Profile Header */
-.profileHeader { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 1rem; padding: 2rem; margin-bottom: 2rem; text-align: center; }
-.profileAvatar { width: 120px; height: 120px; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.3); margin: 0 auto 1.5rem; display: block; }
-.profileName { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2rem; color: white; margin-bottom: 0.5rem; }
-.profileUsername { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; margin-bottom: 1rem; }
-.profileBio { color: rgba(255, 255, 255, 0.9); line-height: 1.6; max-width: 600px; margin: 0 auto 2rem; }
-.profileStats { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; }
-.stat { text-align: center; }
-.statNumber { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.5rem; color: white; display: block; }
-.statLabel { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
-.profileActions { display: flex; justify-content: center; gap: 1rem; }
+.profileHeader {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.profileAvatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+.profileName {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.profileUsername {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.profileBio {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+.profileStats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+.stat {
+  text-align: center;
+}
+.statNumber {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  display: block;
+}
+.statLabel {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+.profileActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
 
-.btn { padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
-.btnPrimary { background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.3); }
-.btnPrimary:hover { background: rgba(255, 255, 255, 0.2); }
-.btnSecondary { background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.3); }
-.btnSecondary:hover { background: rgba(255, 255, 255, 0.2); }
+.btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.btnPrimary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btnPrimary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Photo Upload Styling */
+.photoUploadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.photoUploadContainer:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.photoPreview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.photoUploadInput {
+  display: none;
+}
+
+.photoUploadBtn {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.photoUploadBtn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
 
 /* Content Grid */
-.contentGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-.contentCard { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 1rem; padding: 2rem; }
-.cardTitle { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.25rem; color: white; margin-bottom: 1.5rem; }
-.postItem { display: flex; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-.postItem:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.postAvatar { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; }
-.postContent { flex: 1; }
-.postAuthor { font-weight: 600; color: white; margin-bottom: 0.25rem; }
-.postText { color: rgba(255, 255, 255, 0.9); line-height: 1.5; margin-bottom: 0.5rem; }
-.postTime { color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; }
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
 
-.friendItem { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-.friendAvatar { width: 50px; height: 50px; border-radius: 50%; }
-.friendInfo { flex: 1; }
-.friendName { font-weight: 600; color: white; margin-bottom: 0.25rem; }
-.friendUsername { color: rgba(255, 255, 255, 0.7); font-size: 0.875rem; }
-.friendBtn { padding: 0.5rem 1rem; background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; border-radius: 0.375rem; font-size: 0.875rem; cursor: pointer; transition: all 0.3s ease; font-weight: 500; }
-.friendBtn:hover { background: linear-gradient(135deg, #059669, #047857); transform: translateY(-1px); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); }
+/* Posts Section */
+.postsSection {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.postsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Added beautiful gradient title styling for Recent Posts */
+.recentPostsTitle {
+  position: relative;
+  display: inline-block;
+}
+
+.titleGradient {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.titleUnderline {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899, #06b6d4);
+  border-radius: 2px;
+  animation: underlineGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(30deg);
+  }
+}
+
+@keyframes underlineGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.8);
+  }
+}
+
+.postsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.postCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.postCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Updated post header layout to match reference design */
+.postHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem 0;
+  margin-bottom: 0;
+}
+
+.postAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.postUserInfo {
+  flex: 1;
+}
+
+.postAuthor {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.postTime {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+.postMenuBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+}
+
+.postMenuBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.postContent {
+  padding: 0 1.5rem;
+}
+
+.postText {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.postImage {
+  width: 100%;
+  max-width: 500px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Updated post actions to match reference design with icons and counts */
+.postActions {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1rem;
+}
+
+.postActionBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.postActionBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Added red styling for liked posts */
+.postActionBtn.liked {
+  color: #ef4444;
+}
+
+.postActionBtn.liked:hover {
+  color: #dc2626;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.actionIcon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.5;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.friendsSection {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.friendsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.friendGridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.friendGridAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.friendGridName {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.sidebarSection {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.sidebarTitle {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.giftsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.giftItem {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.subscriptionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.subscriptionItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.subscriptionAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.subscriptionInfo {
+  flex: 1;
+}
+
+.subscriptionName {
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.subscriptionDesc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(15px);
+  }
+}
+
+.modalContent {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modalTitle {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.closeBtn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.formGroup {
+  margin-bottom: 2rem;
+}
+
+.formLabel {
+  display: block;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.75rem;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btnCancel {
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btnCancel:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btnSubmit {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btnSubmit:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Additional User Info Styles */
+.userInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.infoIcon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+/* Multiple Image Upload Preview Styles */
+.imagePreviewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.imagePreviewItem {
+  position: relative;
+}
+
+.imagePreview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.removeImageBtn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.removeImageBtn:hover {
+  background: rgba(220, 38, 38, 1);
+  transform: scale(1.1);
+}
+
+/* Comments Section Styling */
+.commentsSection {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.commentItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.commentAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.commentContent {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.commentHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.commentAuthor {
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.commentTime {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+}
+
+.commentText {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.addComment {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.commentInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  color: white;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.commentInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.commentInput:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* Added styles for reply functionality and photo uploads in comments */
+.replyBtn {
+  background: none;
+  border: none;
+  color: rgba(139, 92, 246, 0.8);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.replyBtn:hover {
+  color: rgba(139, 92, 246, 1);
+}
+
+.repliesContainer {
+  margin-left: 2.5rem;
+  margin-top: 1rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 1rem;
+}
+
+.replyItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.replyForm {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-left: 2.5rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.replyInputContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.commentInputContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.commentActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.photoBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.photoBtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: scale(1.05);
+}
+
+.sendBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.sendBtn:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.commentPhotos {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.commentPhoto {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.commentPhotoPreview {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.previewImage {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.removePhotoBtn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.removePhotoBtn:hover {
+  background: rgba(220, 38, 38, 1);
+  transform: scale(1.1);
+}
+
+/* Updated card title styling for friends section */
+.cardTitle {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .navLinks { display: none; }
-    .contentGrid { grid-template-columns: 1fr; }
-    .profileStats { gap: 2rem; }
-    .mainContent { padding: 1rem; }
+  .navLinks {
+    display: none;
+  }
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+  .profileStats {
+    gap: 2rem;
+  }
+  .mainContent {
+    padding: 1rem;
+  }
+  .friendsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .postsHeader {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+}
+
+/* Adding missing createPostBtn styling with glassmorphism effect */
+.createPostBtn {
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.createPostBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
