@@ -1,36 +1,11 @@
 import styles from "../../styles/profile.module.css"
+import NavBar from "../../components/navbar/Navbar"
+
 
 export default function Profile() {
   return (
     <div>
-      <nav className={styles.navbar}>
-        <div className={styles.navContainer}>
-          <a href="#" className={styles.logo}>
-            AnLuck
-          </a>
-          <ul className={styles.navLinks}>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Profile</a>
-            </li>
-            <li>
-              <a href="#">Messages</a>
-            </li>
-            <li>
-              <a href="#">Settings</a>
-            </li>
-          </ul>
-          <div className={styles.navProfile}>
-            <img
-              src="https://avatars.githubusercontent.com/u/143941740?v=4"
-              alt="Profile"
-              className={styles.navAvatar}
-            />
-          </div>
-        </div>
-      </nav>
+      <NavBar avatar='https://avatars.githubusercontent.com/u/143941740?v=4'/>
 
       <main className={styles.mainContent}>
         <section className={styles.profileHeader}>
